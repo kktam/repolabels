@@ -11,8 +11,15 @@ module.exports = api;
 /*
  * Get Github repository graph data
  */
-var getRepoDetails = function (owner, repo) {
-    return got('https://api.github.com/repos/' + owner + '/' + repo).then(function (response) {
+var getRepoDetails = function (owner, repo, env) {
+    var appAuthorization = '';
+    var url = '';
+    if (!env && env.githubClientId && env.githubSecret) {
+        appAuthorization = '?client_id=' + env.githubClientId + '&client_secret=' + env.githubSecret;
+    }
+    console.log(url);
+    url = 'https://api.github.com/repos/' + owner + '/' + repo + appAuthorization;
+    return got(url).then(function (response) {
         return JSON.parse(response.body);
     });
 };
@@ -54,7 +61,7 @@ api.get('{owner}/{repo}/{template}', function (request) {
     return fs.readFile('svg/' + templateName + '.svg', 'utf8').then(function (contents) {
         template = contents;
     }).then(function () {
-        return getRepoDetails(owner, repo);
+        return getRepoDetails(owner, repo, request.env);
     }).then(function (repoDetails){
         var displayName = repoDetails.full_name.length <= 20 ? repoDetails.full_name: repoDetails.name;
         var replacements = {
