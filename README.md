@@ -16,8 +16,8 @@
 
 # Demo
 A live demo of this project is located at 
-[Github Large image](https://102nw14mgd.execute-api.us-west-2.amazonaws.com/dev/claudiajs/claudia/large).
-[Github Small image](https://102nw14mgd.execute-api.us-west-2.amazonaws.com/dev/claudiajs/claudia/small).
+[Github Large image](https://d38ju2be3hm2m3.cloudfront.net/claudiajs/claudia/large).
+[Github Small image](https://d38ju2be3hm2m3.cloudfront.net/claudiajs/claudia/small).
 
 This project is based on the Example project from Claudia.js
 
