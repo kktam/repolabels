@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "repolabels-executor",
+    "name": "repolabels",
+    "region": "us-west-2"
+  },
+  "api": {
+    "id": "102nw14mgd",
+    "module": "api"
+  }
+}
