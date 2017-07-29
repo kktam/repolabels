@@ -14,7 +14,7 @@ module.exports = api;
 var getRepoDetails = function (owner, repo, env) {
     var appAuthorization = '';
     var url = '';
-    if (!env && env.githubClientId && env.githubSecret) {
+    if (env && env.githubClientId && env.githubSecret) {
         appAuthorization = '?client_id=' + env.githubClientId + '&client_secret=' + env.githubSecret;
     }
     console.log(url);
