@@ -1,17 +1,17 @@
-var API = require('claudia-api-builder');
-var TimeAgo = require('time-ago');
-var numeral = require('numeral');
-var got = require('got');
-var fs = require('fs-promise');
-var api = new API();
-var formatter = new TimeAgo();
+const API = require('claudia-api-builder'),
+      TimeAgo = require('time-ago'),
+      numeral = require('numeral'),
+      got = require('got'),
+      fs = require('fs-promise'),
+      api = new API(),
+      formatter = new TimeAgo();
 
 module.exports = api;
 
 /*
  * Get Github repository graph data
  */
-var getRepoDetails = function (owner, repo, env) {
+let getRepoDetails = function (owner, repo, env) {
     var appAuthorization = '';
     var url = '';
     if (env && env.githubClientId && env.githubSecret) {
@@ -76,6 +76,6 @@ api.get('{owner}/{repo}/{template}', function (request) {
         });
         return template;
     });
-    
+
     //return 'You asked for ' + request.pathParams.owner + '/' + request.pathParams.repo;
 }, { success: { contentType: 'image/svg+xml'}});

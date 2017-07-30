@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node spec/support/jasmine-runner.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +14,13 @@
     "got": "^7.1.0",
     "numeral": "^2.0.6",
     "time-ago": "^0.1.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.92.0",    
+    "eslint": "^3.12.2",
+    "eslint-config-crockford": "^0.2.0",
+    "eslint-config-defaults": "^9.0.0",
+    "jasmine": "^2.7.0",
+    "jasmine-spec-reporter": "^2.7.0"
   }
 }
